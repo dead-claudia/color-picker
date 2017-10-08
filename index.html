@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<script src="./color-picker.js"></script>
+<style media="screen">
+html, body {
+    margin: 0;
+    height: calc(100% - 1em);
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+h1, p, p ~ div {
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+#color-picker {
+    margin: 0 auto;
+    width: 20em;
+    height: 20em;
+    max-width: 80%;
+    max-height: 80%;
+}
+</style>
+<title>Color Picker Demo</title>
+<h1>Color Picker Demo</h1>
+<p><a href="https://github.com/isiahmeadows/color-picker">See the source on GitHub</a></p>
+<p>When you select a color, it's saved in the hash so you can share it. Hover over the box to learn how to use it.</p>
+<div>
+    Scroll direction:
+    <button onclick="sendEvent('scroll-normal')">Normal</button>
+    <button onclick="sendEvent('scroll-natural')">Natural</button>
+</div>
+<div id="color-picker"></div>
+<script>
+var picker = colorPicker({
+    initial: location.hash,
+    onselect: function (hash) { location.hash = hash },
+})
+document.getElementById("color-picker").appendChild(picker)
+function sendEvent(name) {
+    picker.dispatchEvent(new Event("color-picker." + name))
+}
+</script>

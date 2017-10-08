@@ -1,0 +1,13 @@
+{
+  "name": "color-picker",
+  "version": "1.0.0",
+  "description": "A simple color picker",
+  "main": "index.js",
+  "author": "Isiah Meadows <me@isiahmeadows.com>",
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "eslint": "^4.8.0",
+    "eslint-config-isiahmeadows": "^0.1.8"
+  }
+}
